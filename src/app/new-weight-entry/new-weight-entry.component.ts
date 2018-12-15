@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'hm-new-weight-entry',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewWeightEntryComponent implements OnInit {
 
+  @Input() showBodyFat: boolean;
   constructor() { }
 
   ngOnInit() {
