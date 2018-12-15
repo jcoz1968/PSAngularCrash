@@ -1,3 +1,4 @@
+import { IdentityService } from './identity.service';
 import { Component, OnInit } from '@angular/core';
 
 import { WeightEntriesService } from './weight-entries.service';
@@ -10,7 +11,7 @@ import { WeightEntriesService } from './weight-entries.service';
 export class AppComponent implements OnInit {
 
 
-  constructor() {}
+  constructor(public loginService: IdentityService) {}
 
   ngOnInit() {}
 
