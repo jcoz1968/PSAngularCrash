@@ -8,7 +8,14 @@ import { WeightEntriesService } from './weight-entries.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  showBodyFat = true;
+
   constructor(public entriesService: WeightEntriesService) {}
 
   ngOnInit() {}
+
+  toggleBodyFat() {
+    this.showBodyFat = !this.showBodyFat;
+  }
+
 }
