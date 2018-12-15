@@ -9,10 +9,12 @@ import { Entry } from './../model/entry';
 })
 export class HomeComponent implements OnInit {
   showBodyFat = true;
+  entries: Entry[];
 
   constructor(public entriesService: WeightEntriesService) { }
 
   ngOnInit() {
+    this.refreshData();
   }
 
   toggleBodyFat() {
@@ -20,7 +22,15 @@ export class HomeComponent implements OnInit {
   }
 
   createNewEntry(entry: Entry) {
-    this.entriesService.addEntry(entry);
+    this.entriesService.addEntry(entry).subscribe(() => {
+      this.refreshData();
+    });
+  }
+
+  refreshData() {
+    this.entriesService.getEntries().subscribe(entries => {
+      this.entries = entries;
+    });
   }
 
 }
