@@ -8,7 +8,11 @@ import { WeightEntriesService } from './weight-entries.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(public entriesService: WeightEntriesService) {}
+
+
+  constructor() {}
 
   ngOnInit() {}
+
+
 }
